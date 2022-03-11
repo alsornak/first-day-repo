@@ -1,31 +1,45 @@
 const router = require('express').Router();
-const { Doctors, Patients } = require('../models');
+const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  try {
-    // Get all doctors
-    const doctorData = await Doctors.findAll();
-
-    // Serialize data so the template can read it
-    const doctors = doctorData.map((doctor) => doctor.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('signUp');
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+   
+    res.render('signup');
+  
+  });
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/index');
+    return;
+  }
+  res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/index');
     return;
   }
 
-  res.render('login');
+  res.render('signup');
 });
+// Route to create a new user
+router.post("/users", function(req, res) {
+  User.create({
+    username: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+  }).then(function(data){
+    console.log(data.dataValues.id);
+
+    res.redirect("/users/" + data.dataValues.id);
+  });
+});
+
+
+
 
 
 module.exports = router;

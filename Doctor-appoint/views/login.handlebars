@@ -1,42 +1,36 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+	<!-- Navbar -->
+ <header>
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="navbar"><img src="https://p5.zdassets.com/hc/theme_assets/187734/200050403/knowledge.png" height=75px alt="diary" id="navbarImage">
+        <a class="navbar-brand" id="navbarHeader">My Doctor Appointment</a>
+      </nav>
+    </header>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script src="./js/login.js"></script>
+	<div class="container" id="mainContainer">
+		<!-- Main Row -->
+		<div class="row justify-content-center">
+			
+			<!-- Sign In Form -->
+			<div class="col-md-6">
+				<form class="signin">
+				<h1 class="signInTitle">Welcome Back!</h1>
+				
+				  <div class="form-group">
+				    <label for="inputEmail" class="signInLabel">Email address</label>
+				    <input type="email" class="form-control placeholder" name="email" id="inputEmail" placeholder="Email">
+				  </div>
+				  <div class="form-group">
+				    <label for="inputPassword" class="signInLabel">Password</label>
+				    <input type="password" class="form-control placeholder" name="password" id="inputPassword" placeholder="Password">
+				  </div>
+				  
+				  <div class="form-group">
+				    <button type="submit" class="btn btn-secondary float-right regButton" id="logInButton">Log In</button>
+					</div>
+					<br>
+					<br>
+					<span class="memberQuestion">Don't Have an Account? <a href="/signup">Sign Up</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="/js/login.js"></script>
