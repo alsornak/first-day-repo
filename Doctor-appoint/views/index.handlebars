@@ -9,10 +9,10 @@
               <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu" aria-labelledby="menu1">
-                <a class="dropdown-item" href="/users/{{user.id}}">Home</a>
-                <a class="dropdown-item" href="/users/doctors/{{user.id}}">My Doctors</a>
+                <a class="dropdown-item" href="/{{user.id}}">Home</a>
+                <a class="dropdown-item" href="/doctors/{{user.id}}">My Doctors</a>
                 <hr>
-                <a class="dropdown-item" href="/users">Log Out</a>
+                <a class="dropdown-item" href="/">Log Out</a>
               </div>
             </li>
           </ul>
@@ -95,7 +95,7 @@
             <label for="exampleSelect1">Category</label>
             <select class="form-control placeholder" id="apptCategory" name="category">
               <option value="Doctor Visit">Doctor Visit</option>
-              <option value="PT/OT/ST">PT/OT/ST</option>
+              <option value="PT/OT">PT/OT</option>
               <option value="Personal">Personal</option>
               <option value="Other">Other</option>
             </select>
