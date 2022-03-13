@@ -1,4 +1,4 @@
-const indexFormHandler = async (event) => {
+const indexFormHandler2 = async (event) => {
     event.preventDefault();
     
     const incident = document.querySelector('#noteTitle').value.trim();
