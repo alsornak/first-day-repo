@@ -5,36 +5,41 @@ class Doctor extends Model {}
 
 Doctor.init(
     {
-        Doctor_name: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false, 
         },
-
-        Doctor_specialty: {
+        speciality: {
+            type: DataTypes.STRING,
+            allowNull: false,            
+        },
+        Phone: {
             type: DataTypes.STRING,
             allowNull: false,
-            
+            validate: {
+                not: ["[a-z]",'i']
+              }
         },
-
-        Phonenumber: {
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },       
+        notes: {
+            type: DataTypes.STRING,
+            allowNull: false, 
+        },
+        user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-
-        Doctor_location: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-       
-        Additinal_notes: {
-            type: DataTypes.STRING,
-            allowNull: false, 
+            references: {
+              model: 'user',
+              key: 'id',
+            },
         },
     },
     {
         sequelize,
         timestamps: false,
-        modeName: 'Doctor',
+        modeName: 'doctor',
         freezeTableName: true
     }    
     

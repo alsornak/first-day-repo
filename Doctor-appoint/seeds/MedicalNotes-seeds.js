@@ -2,22 +2,25 @@ const { Medicalnotes } = require('../models');
 
 const MedicalnotestData = [
     {
-        Title:"Doc Visit" ,
-        Location: "Melbourne",
-        Description: "Stomach Ache",
-        Category:"Check Up",
+        title:"Doc Visit" ,
+        location: "Melbourne",
+        content: "Stomach Ache",
+        category:"Check Up",
+        user_id:1,
     },
     {
-        Title:"Doc Visit",
-        Location: "Melbourne",
-        Description: "Quaterly Diabetic check up",
-        Category:"Follow Up Visit",
+        title:"Doc Visit",
+        location: "Melbourne",
+        content: "Quaterly Diabetic check up",
+        category:"Follow Up Visit",
+        user_id:2,
     },
     {
-        Title:"Doc Visit" ,
-        Location: "Melbourne",
-        Description: "Leg Cramps",
-        Category:"Check Up",
+        title:"Doc Visit" ,
+        location: "Melbourne",
+        content: "Leg Cramps",
+        category:"Check Up",
+        user_id:3,
     },
     
 ];

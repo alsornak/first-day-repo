@@ -1,17 +1,17 @@
-const docFormHandler = async (event) => {
+const signupFormHandler = async (event) => {
     event.preventDefault();
     
-    const docname = document.querySelector('#doctorName').value.trim();
-    const docspec = document.querySelector('#doctorSpecialty').value.trim();
-    const docno = document.querySelector('#doctorPhoneNumber').value.trim();
-    const docloc = document.querySelector('#doctorLocation').value.trim();
-    const category = document.querySelector('#noteCategory').value.trim();
+    const name = document.querySelector('#doctorName').value.trim();
+    const speciality = document.querySelector('#doctorSpeciality').value.trim();
+    const phone = document.querySelector('#doctorPhoneNumber').value.trim();
+    const location = document.querySelector('#doctorLocation').value.trim();
+    const notes = document.querySelector('#doctorNotes').value.trim();
 
   
-    if (docname && docspec && docno && docloc &&  category) {
+    if (name && speciality && phone && location &&  notes) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ docname, docspec, docno,docloc, category }),
+        body: JSON.stringify({ name, speciality, phone, location, notes}),
         headers: { 'Content-Type': 'application/json' },
       });
   

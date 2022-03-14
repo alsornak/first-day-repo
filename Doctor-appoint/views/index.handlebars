@@ -109,9 +109,10 @@
     </div>
   </div>
 </div>
+<script src="../public/js/appointment.js"></script>
 <!-- End New Appointment -->
 <!-- UPDATE APPOINTMENTS modal -->
-{{#each user.Appointments}}
+{{#each user.Appointment}}
 <div class="modal fade" id="updtApptModal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="updtAppt" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -175,7 +176,7 @@
       <h1 class="welcome">Medical Notes</h1>
       <!-- Medical NOTE handlebars -->
       <div id="hbNote" role="tablist" aria-multiselectable="true">
-        {{#each user.MedNotes}}
+        {{#each user.Medicalnotes}}
         
         <div class="card">
           <div class="card-header noteItem" role="tab" id="heading{{this.id}}">
@@ -225,7 +226,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form class="signup" action="/medicalNotes/{{user.id}}" method="POST">
+                <form class="signup" action="/medicalNotes/{{user.user_id}}" method="POST">
                   
                   <div class="form-group">
                     <label for="noteTitle">Incident Title</label>
@@ -258,9 +259,10 @@
             </div>
           </div>
         </div>
+        <script src="../public/js/medicalnotes.js"></script>
         <!-- End New Note -->
         <!-- UPDATE NOTE Modal -->
-        {{#each user.MedNotes}}
+        {{#each user.Medicalnotes}}
         <div class="modal fade" id="updtNoteModal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="newNote" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -315,7 +317,7 @@
         <h1 class="signUpTitle">To-Do List</h1>
         
         <!-- TODO Form to add new to-do -->
-        <form class="form-inline" action="/todo/{{user.id}}" method="POST">
+        <form class="forminline" action="/todo/{{user.user_id}}" method="POST">
           <div class="form-group" id="toDoDiv">
             
             <label class="sr-only" for="newToDo">New To Do</label>
@@ -354,7 +356,7 @@
                 </div>
                 <div class="modal-body">
                   
-                  <form class="form-inline" action="/todo/{{this.id}}?_method=PUT" method="POST">
+                  <form class="forminline" action="/todo/{{this.id}}?_method=PUT" method="POST">
                     <div class="form-group" id="toDoDiv">
                       
                       <label class="sr-only" for="newToDo"></label>
@@ -368,6 +370,7 @@
             </div>
           </div>
           {{/each}}
+          <script src="../public/js/todo.js"></script>
           <!-- End of TODO UPDATE Modal -->
         </div>
       </div>

@@ -1,33 +1,36 @@
-const { Appointments } = require('../models');
+const { Appointment } = require('../models');
 
 const appointmentData = [
     {
-        Date:"18/03/2022" ,
-        Time: "13.45",
-        Location: "Melbourne",
-        Title: "Doc Visit",
-        Notes:"Stomach Ache",
-        Category:"Doctor Visit",
+        date:"18/03/2022" ,
+        time: "13.45",
+        location: "Melbourne",
+        title: "Doc Visit",
+        notes:"Stomach Ache",
+        user_id: 1,
+        
     },
     {
-        Date:"20/03/2022",
-        Time:"18.30",
-        Location: "Melbourne",
-        Title: "Doc Visit",
-        Notes:"Quaterly Diabetic check up",
-        Category:"Doc Visit",
+        date:"20/03/2022",
+        time:"18.30",
+        location: "Melbourne",
+        title: "Doc Visit",
+        notes:"Quaterly Diabetic check up",
+        user_id: 2,
+        
     },
     {
-        Date:"01/04/2022",
-        Time:"15.30",
-        Location: "Melbourne",
-        Title: "Doc Visit",
-        Notes:"Leg Cramps",
-        Category:"Personal",
+        date:"01/04/2022",
+        time:"15.30",
+        location: "Melbourne",
+        title: "Doc Visit",
+        notes:"Leg Cramps",
+        user_id: 3,
+        
     },
     
 ];
 
-const seedAppointments = () => Appointments.bulkCreate(appointmentData);
+const seedAppointment = () => Appointment.bulkCreate(appointmentData);
 
-module.exports = seedAppointments;
+module.exports = seedAppointment;

@@ -1,17 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require ('../config/connection');
 
-class Appointments extends Model {}
+class Appointment extends Model {}
 
-Appointments.init(
+Appointment.init(
     {
         date: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false, 
         },
 
         time: {
-            type: DataTypes.TIME,
+            type: DataTypes.STRING,
             allowNull: false,
             
         },
@@ -22,7 +22,7 @@ Appointments.init(
         },
 
         title: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
         },
        
@@ -30,20 +30,21 @@ Appointments.init(
             type: DataTypes.STRING,
             allowNull: false, 
         },
-
-        Category: {
-            type: DataTypes.STRING,
-            allowNull: false,
-
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id',
+            },
         },
     },
     {
         sequelize,
         timestamps: false,
-        modeName: 'appointments',
+        modeName: 'appointment',
         freezeTableName: true
     }    
     
 );
 
-module.exports = Appointments;
+module.exports = Appointment;

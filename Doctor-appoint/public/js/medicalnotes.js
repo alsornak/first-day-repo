@@ -1,16 +1,16 @@
-const indexFormHandler2 = async (event) => {
+const signupFormHandler = async (event) => {
     event.preventDefault();
     
-    const incident = document.querySelector('#noteTitle').value.trim();
-    const description = document.querySelector('#noteIncident').value.trim();
+    const title = document.querySelector('#noteTitle').value.trim();
     const location = document.querySelector('#noteLocation').value.trim();
+    const content = document.querySelector('#noteIncident').value.trim();    
     const category = document.querySelector('#noteCategory').value.trim();
 
   
-    if (incident && description && location &&  category) {
+    if (title && location && content &&  category) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ incident, description, location, category }),
+        body: JSON.stringify({ title, location, content, category }),
         headers: { 'Content-Type': 'application/json' },
       });
   
