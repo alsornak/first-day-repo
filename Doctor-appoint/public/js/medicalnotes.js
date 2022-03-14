@@ -8,7 +8,7 @@ const signupFormHandler = async (event) => {
 
   
     if (title && location && content &&  category) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/medicalnotes', {
         method: 'POST',
         body: JSON.stringify({ title, location, content, category }),
         headers: { 'Content-Type': 'application/json' },

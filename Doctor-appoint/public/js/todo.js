@@ -5,7 +5,7 @@ const forminlineFormHandler = async (event) => {
     
   
     if (toDo) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/todo', {
         method: 'POST',
         body: JSON.stringify({ toDo}),
         headers: { 'Content-Type': 'application/json' },

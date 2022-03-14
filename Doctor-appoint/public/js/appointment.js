@@ -9,7 +9,7 @@ const signupFormHandler = async (event) => {
     const category = document.querySelector('#apptCategory').value.trim();
   
     if (date && time && location && title && notes && category) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/appointment', {
         method: 'POST',
         body: JSON.stringify({ date, time, location, title, notes, category }),
         headers: { 'Content-Type': 'application/json' },
