@@ -1,8 +1,8 @@
 const sequelize = require('../config/connection');
-const seedUser = require('./userData');
+const seedUser = require('./user');
 const seedAppointment = require('./Appointment-seeds');
-const seedMedicalnotes = require('./Medicalnotes-seeds');
-const seedDoctor = require('./doctor-seeds');
+const seedMedicalnotes = require('./Medicalnotes');
+const seedDoctor = require('./Doctor');
 
 
 const seedAll = async () => {

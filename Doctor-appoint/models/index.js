@@ -4,7 +4,7 @@ const Doctor = require('./doctor');
 const Medicalnotes = require ('./medicalnotes');
 const ToDo = require('./todo');
 
-User.hasMany(Appointments, {
+User.hasMany(Appointment, {
     foreignKey: 'user_id',
 });
 
