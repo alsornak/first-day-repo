@@ -8,6 +8,6 @@ const ToDoData = [
         
 ];
 
-const seedToDo = () => ToDo.bulkCreate(MedicalnotesData);
+const seedToDo = () => ToDo.bulkCreate(ToDodata);
 
 module.exports = seedToDo;
